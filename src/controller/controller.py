@@ -2,19 +2,70 @@ from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from config import config as cf
 from service.model import ConnPostgre
+from service.validation import Validation
 import pandas as pd
 import json
+from flask import request
 
 app = Flask(__name__)
 app.debug = True
 
 from controller import view
 
-@app.route('/insert')
+@app.route('/validate', methods=['POST'])
+def validate():
+    try:
+        if request.files['file']:
+            file = request.files.get('file')
+            native_table, bad_table = validateData(file)
+
+            bad_table.to_csv('D:/migration-data/src/data/badrecord_export_data.csv', index=False)
+            native_table.to_csv('D:/migration-data/src/data/native_export_data.csv', index=False)
+        else:
+            return {
+                'status': 'VALIDATION_FAILED',
+                'message': "Missing data csv"}, 500
+    except Exception as ex:
+         return {
+            'status': 'VALIDATION_FAILED',
+            'message': str(ex)}, 500
+    return {
+        "msg": "VALIDATION_SUCCESS"
+        }, 200
+
+@app.route('/insert', methods=['POST'])
 def insert():
-    data = pd.read_csv('D:/migration-data/src/data/car_sample_data.csv', sep=';', index_col=0)
+    msg = ""
+    table_name = 'car'
+    try:
+        if request.files['file']:
+            file = request.files.get('file')
+            native_table, bad_table = validateData(file)
+            bad_table.to_csv('D:/migration-data/src/data/badrecord_export_data.csv', index=False)
+
+            conn = ConnPostgre(cf.HOST, cf.USER, cf.PASSWORD, cf.DATABASE)
+            conn.sql_insert(table_name, native_table)
+            msg = ("Table %s created successfully." %table_name)
+        else:
+            return {
+                'status': 'INSERT_FAILED',
+                'message': "Missing data csv"}, 500
+    except Exception as ex:
+        return {
+            'status': 'INSERT_FAILED',
+            'message': str(ex)}, 500
+    return {
+        'status': 'INSERT_SUCCESS',
+        "msg" : msg}, 200
+
+def validateData(file_csv):
+    data = pd.read_csv(file_csv, sep=';', index_col=0)
     dataFrame = pd.DataFrame(data)
 
-    conn = ConnPostgre(cf.HOST, cf.USER, cf.PASSWORD, cf.DATABASE)
-    conn.sql_insert('carv2', dataFrame)
-    return 'Success'
+    val_data = Validation()
+
+    native_table, bad_table_v1 = val_data.check_nan(dataFrame)
+    native_table, bad_table_v2 = val_data.check_length(native_table)
+    native_table = val_data.check_dtype(native_table)
+
+    return native_table, pd.concat([bad_table_v1, bad_table_v2])
