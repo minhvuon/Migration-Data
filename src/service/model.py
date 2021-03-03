@@ -13,5 +13,5 @@ class ConnPostgre:
         return conn
 
     def sql_insert(self, table_name, data_frame):
-        data_frame.to_sql(table_name, self.conn, if_exists='append', index=False)
+        data_frame.to_sql(table_name, self.conn, if_exists='replace', index=False)
         return True

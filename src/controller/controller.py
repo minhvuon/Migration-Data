@@ -59,13 +59,18 @@ def insert():
         "msg" : msg}, 200
 
 def validateData(file_csv):
-    data = pd.read_csv(file_csv, sep=';', index_col=0)
+    data = pd.read_csv(file_csv, sep=',')
     dataFrame = pd.DataFrame(data)
 
     val_data = Validation()
 
-    native_table, bad_table_v1 = val_data.check_nan(dataFrame)
-    native_table, bad_table_v2 = val_data.check_length(native_table)
-    native_table = val_data.check_dtype(native_table)
+    native_table = val_data.anonimize(dataFrame)
 
-    return native_table, pd.concat([bad_table_v1, bad_table_v2])
+    native_table, bad_table_v1 = val_data.check_nan(native_table)
+    native_table, bad_table_v2 = val_data.check_length(native_table)
+    native_table, bad_table_v3 = val_data.check_duplicate(native_table)
+
+    native_table = val_data.check_dtype(native_table)
+    native_table = val_data.rename(native_table)
+
+    return native_table, pd.concat([bad_table_v1, bad_table_v2, bad_table_v3])
