@@ -6,7 +6,6 @@ No,Symboling,Normalized-losses,Make,type,Aspiration,Num-of-doors,Body-style,Driv
 5,2,164,audi,gas,std,four,sedan,4wd,front,99.4,2824,ohc,five,mpfi,8.0,115,5500,18,22,2/01/2001
 6,2,?,audi,gas,std,two,sedan,fwd,front,99.8,2507,ohc,five,mpfi,8.5,110,5500,19,25,2/01/2001
 7,1,158,audi,gas,std,four,sedan,fwd,front,105.8,2844,ohc,five,mpfi,8.5,110,5500,19,25,2/01/2001
-8,1,?,audi,gas,std,four,wagon,fwd,front,105.8,2954,ohc,five,mpfi,8.5,110,5500,19,25,2/01/2001
 9,1,158,audi,gas,turbo,four,sedan,fwd,front,105.8,3086,ohc,five,mpfi,8.3,140,5500,17,20,2/01/2001
 11,2,192,bmw,gas,std,two,sedan,rwd,front,101.2,2395,ohc,four,mpfi,8.8,101,5800,23,29,2/01/2001
 12,0,192,bmw,gas,std,four,sedan,rwd,front,101.2,2395,ohc,four,mpfi,8.8,101,5800,23,29,2/01/2001
@@ -14,12 +13,10 @@ No,Symboling,Normalized-losses,Make,type,Aspiration,Num-of-doors,Body-style,Driv
 14,0,188,bmw,gas,std,four,sedan,rwd,front,101.2,2765,ohc,six,mpfi,9.0,121,4250,21,28,2/01/2001
 15,1,?,bmw,gas,std,four,sedan,rwd,front,103.5,3055,ohc,six,mpfi,9.0,121,4250,20,25,2/01/2001
 16,0,?,bmw,gas,std,four,sedan,rwd,front,103.5,3230,ohc,six,mpfi,8.0,182,5400,16,22,2/01/2001
-18,0,?,bmw,gas,std,four,sedan,rwd,front,110.0,3505,ohc,six,mpfi,8.0,182,5400,15,20,2/01/2001
 19,2,121,chevrolet,gas,std,two,hatchback,fwd,front,88.4,1488,l,three,2bbl,9.5,48,5100,47,53,2/01/2001
 20,1,98,chevrolet,gas,std,two,hatchback,fwd,front,94.5,1874,ohc,four,2bbl,9.6,70,5400,38,43,2/01/2001
 21,0,81,chevrolet,gas,std,four,sedan,fwd,front,94.5,1909,ohc,four,2bbl,9.6,70,5400,38,43,2/01/2001
 22,1,118,dodge,gas,std,two,hatchback,fwd,front,93.7,1876,ohc,four,2bbl,9.41,68,5500,37,41,2/01/2001
-23,1,118,dodge,gas,std,two,hatchback,fwd,front,93.7,1876,ohc,four,2bbl,9.4,68,5500,31,38,2/01/2001
 24,1,118,dodge,gas,turbo,two,hatchback,fwd,front,93.7,2128,ohc,four,mpfi,7.6,102,5500,24,30,2/01/2001
 25,1,148,dodge,gas,std,four,hatchback,fwd,front,93.7,1967,ohc,four,2bbl,9.4,68,5500,31,38,2/01/2001
 26,1,148,dodge,gas,std,four,sedan,fwd,front,93.7,1989,ohc,four,2bbl,9.4,68,5500,31,38,2/01/2001
@@ -62,10 +59,8 @@ No,Symboling,Normalized-losses,Make,type,Aspiration,Num-of-doors,Body-style,Driv
 67,0,?,mazda,diesel,std,four,sedan,rwd,front,104.9,2700,ohc,four,idi,22.0,72,4200,31,39,4/01/2001
 68,-1,93,mercedes-benz,diesel,turbo,four,sedan,rwd,front,110.0,3515,ohc,five,idi,21.5,123,4350,22,25,4/01/2001
 69,-1,93,mercedes-benz,diesel,turbo,four,wagon,rwd,front,110.0,3750,ohc,five,idi,21.5,123,4350,22,25,4/01/2001
-70,0,93,mercedes-benz,diesel,turbo,two,hardtop,rwd,front,106.7,3495,ohc,five,idi,21.5,123,4350,22,25,4/01/2001
 71,-1,93,mercedes-benz,diesel,turbo,four,sedan,rwd,front,115.6,3770,ohc,five,idi,21.5,123,4350,22,25,4/01/2001
 72,-1,?,mercedes-benz,gas,std,four,sedan,rwd,front,115.6,3740,ohcv,eight,mpfi,8.3,155,4750,16,18,4/01/2001
-73,3,142,mercedes-benz,gas,std,two,convertible,rwd,front,96.6,3685,ohcv,eight,mpfi,8.3,155,4750,16,18,4/01/2001
 74,0,?,mercedes-benz,gas,std,four,sedan,rwd,front,120.9,3900,ohcv,eight,mpfi,8.0,184,4500,14,16,4/01/2001
 75,1,?,mercedes-benz,gas,std,two,hardtop,rwd,front,112.0,3715,ohcv,eight,mpfi,8.0,184,4500,14,16,4/01/2001
 76,1,?,mercury,gas,turbo,two,hatchback,rwd,front,102.7,2910,ohc,four,mpfi,8.0,175,5000,19,24,4/01/2001
@@ -76,7 +71,6 @@ No,Symboling,Normalized-losses,Make,type,Aspiration,Num-of-doors,Body-style,Driv
 81,3,153,mitsubishi,gas,turbo,two,hatchback,fwd,front,96.3,2370,ohc,four,spdi,7.5,116,5500,23,30,4/01/2001
 82,3,153,mitsubishi,gas,std,two,hatchback,fwd,front,96.3,2328,ohc,four,2bbl,8.5,88,5000,25,32,4/01/2001
 83,3,?,mitsubishi,gas,turbo,two,hatchback,fwd,front,95.9,2833,ohc,four,spdi,7.0,145,5000,19,24,4/01/2001
-84,3,?,mitsubishi,gas,turbo,two,hatchback,fwd,front,95.9,2921,ohc,four,spdi,7.0,145,5000,19,24,4/01/2001
 85,3,?,mitsubishi,gas,turbo,two,hatchback,fwd,front,95.9,2926,ohc,four,spdi,7.0,145,5000,19,24,4/01/2001
 86,1,125,mitsubishi,gas,std,four,sedan,fwd,front,96.3,2365,ohc,four,2bbl,8.5,88,5000,25,32,4/01/2001
 87,1,125,mitsubishi,gas,std,four,sedan,fwd,front,96.3,2405,ohc,four,2bbl,8.5,88,5000,25,32,4/01/2001
@@ -106,7 +100,6 @@ No,Symboling,Normalized-losses,Make,type,Aspiration,Num-of-doors,Body-style,Driv
 111,0,?,peugot,diesel,turbo,four,wagon,rwd,front,114.2,3430,l,four,idi,21.0,95,4150,25,25,5/01/2001
 112,0,161,peugot,gas,std,four,sedan,rwd,front,107.9,3075,l,four,mpfi,8.4,95,5000,19,24,5/01/2001
 113,0,161,peugot,diesel,turbo,four,sedan,rwd,front,107.9,3252,l,four,idi,21.0,95,4150,28,33,5/01/2001
-114,0,?,peugot,gas,std,four,wagon,rwd,front,114.2,3285,l,four,mpfi,8.4,95,5000,19,24,5/01/2001
 115,0,?,peugot,diesel,turbo,four,wagon,rwd,front,114.2,3485,l,four,idi,21.0,95,4150,25,25,5/01/2001
 116,0,161,peugot,gas,std,four,sedan,rwd,front,107.9,3075,l,four,mpfi,8.4,97,5000,19,24,5/01/2001
 117,0,161,peugot,diesel,turbo,four,sedan,rwd,front,107.9,3252,l,four,idi,21.0,95,4150,28,33,5/01/2001
@@ -133,7 +126,6 @@ No,Symboling,Normalized-losses,Make,type,Aspiration,Num-of-doors,Body-style,Driv
 140,2,83,subaru,gas,std,two,hatchback,fwd,front,93.7,2120,ohcf,four,2bbl,8.7,73,4400,26,31,6/01/2001
 141,2,83,subaru,gas,std,two,hatchback,4wd,front,93.3,2240,ohcf,four,2bbl,8.7,73,4400,26,31,6/01/2001
 142,0,102,subaru,gas,std,four,sedan,fwd,front,97.2,2145,ohcf,four,2bbl,9.5,82,4800,32,37,6/01/2001
-143,0,102,subaru,gas,std,four,sedan,fwd,front,97.2,2190,ohcf,four,2bbl,9.5,82,4400,28,33,6/01/2001
 144,0,102,subaru,gas,std,four,sedan,fwd,front,97.2,2340,ohcf,four,mpfi,9.0,94,5200,26,32,6/01/2001
 145,0,102,subaru,gas,std,four,sedan,4wd,front,97.0,2385,ohcf,four,2bbl,9.0,82,4800,24,25,6/01/2001
 146,0,102,subaru,gas,turbo,four,sedan,4wd,front,97.0,2510,ohcf,four,mpfi,7.7,111,4800,24,29,6/01/2001
@@ -155,7 +147,6 @@ No,Symboling,Normalized-losses,Make,type,Aspiration,Num-of-doors,Body-style,Driv
 163,0,91,toyota,gas,std,four,sedan,fwd,front,95.7,2140,ohc,four,2bbl,9.0,70,4800,28,34,7/01/2001
 164,1,168,toyota,gas,std,two,sedan,rwd,front,94.5,2169,ohc,four,2bbl,9.0,70,4800,29,34,7/01/2001
 165,1,168,toyota,gas,std,two,hatchback,rwd,front,94.5,2204,ohc,four,2bbl,9.0,70,4800,29,34,7/01/2001
-166,1,168,toyota,gas,std,two,sedan,rwd,front,94.5,2265,dohc,four,mpfi,9.4,112,6600,26,29,7/01/2001
 167,1,168,toyota,gas,std,two,hatchback,rwd,front,94.5,2300,dohc,four,mpfi,9.4,112,6600,26,29,7/01/2001
 168,2,134,toyota,gas,std,two,hardtop,rwd,front,98.4,2540,ohc,four,mpfi,9.3,116,4800,24,30,7/01/2001
 169,2,134,toyota,gas,std,two,hardtop,rwd,front,98.4,2536,ohc,four,mpfi,9.3,116,4800,24,30,7/01/2001
@@ -184,7 +175,6 @@ No,Symboling,Normalized-losses,Make,type,Aspiration,Num-of-doors,Body-style,Driv
 192,0,?,volkswagen,gas,std,four,sedan,fwd,front,100.4,2661,ohc,five,mpfi,8.5,110,5500,19,24,8/01/2001
 193,0,?,volkswagen,diesel,turbo,four,sedan,fwd,front,100.4,2579,ohc,four,idi,23.0,68,4500,33,38,8/01/2001
 195,-2,103,volvo,gas,std,four,sedan,rwd,front,104.3,2912,ohc,four,mpfi,9.5,114,5400,23,28,8/01/2001
-196,-1,74,volvo,gas,std,four,wagon,rwd,front,104.3,3034,ohc,four,mpfi,9.5,114,5400,23,28,8/01/2001
 197,-2,103,volvo,gas,std,four,sedan,rwd,front,104.3,2935,ohc,four,mpfi,9.5,114,5400,24,28,8/01/2001
 198,-1,74,volvo,gas,std,four,wagon,rwd,front,104.3,3042,ohc,four,mpfi,9.5,114,5400,24,28,8/01/2001
 199,-2,103,volvo,gas,turbo,four,sedan,rwd,front,104.3,3045,ohc,four,mpfi,7.5,162,5100,17,22,8/01/2001
@@ -192,10 +182,8 @@ No,Symboling,Normalized-losses,Make,type,Aspiration,Num-of-doors,Body-style,Driv
 201,-1,95,volvo,gas,std,four,sedan,rwd,front,109.1,2952,ohc,four,mpfi,9.5,114,5400,23,28,8/01/2001
 202,-1,95,volvo,gas,turbo,four,sedan,rwd,front,109.1,3049,ohc,four,mpfi,8.7,160,5300,19,25,8/01/2001
 204,-1,95,volvo,diesel,turbo,four,sedan,rwd,front,109.1,3217,ohc,six,idi,23.0,106,4800,26,27,8/01/2001
-205,-1,95,volvo,gas,turbo,four,sedan,rwd,front,109.1,3062,ohc,four,mpfi,9.5,114,5400,19,25,8/01/2001
 206,1,158,audi,gas,std,four,sedan,fwd,front,105.8,2844,ohc,five,mpfi,8.5,110,5500,19,25,2/01/2001
 207,-2,103,volvo,gas,std,four,sedan,rwd,front,104.3,2912,ohc,four,mpfi,9.5,114,5400,23,28,8/01/2001
-208,-1,74,volvo,gas,std,four,wagon,rwd,front,104.3,3034,ohc,four,mpfi,9.5,114,5400,23,28,8/01/2001
 209,0,77,toyota,gas,std,four,wagon,fwd,front,95.7,2280,ohc,four,2bbl,9.0,62,4800,31,37,7/01/2001
 210,0,81,toyota,gas,std,four,wagon,4wd,front,95.7,2290,ohc,four,2bbl,9.0,62,4800,27,32,7/01/2001
 211,0,91,toyota,gas,std,four,wagon,4wd,front,95.7,3110,ohc,four,2bbl,9.0,62,4800,27,32,7/01/2001
@@ -216,7 +204,6 @@ No,Symboling,Normalized-losses,Make,type,Aspiration,Num-of-doors,Body-style,Driv
 226,1,98,chevrolet,gas,std,two,hatchback,fwd,front,94.5,1874,ohc,four,2bbl,9.6,70,5400,38,43,2/01/2001
 227,0,81,chevrolet,gas,std,four,sedan,fwd,front,94.5,1909,ohc,four,2bbl,9.6,70,5400,38,43,2/01/2001
 228,1,118,dodge,gas,std,two,hatchback,fwd,front,93.7,1876,ohc,four,2bbl,9.41,68,5500,37,41,2/01/2001
-229,1,118,dodge,gas,std,two,hatchback,fwd,front,93.7,1876,ohc,four,2bbl,9.4,68,5500,31,38,2/01/2001
 230,1,118,dodge,gas,turbo,two,hatchback,fwd,front,93.7,2128,ohc,four,mpfi,7.6,102,5500,24,30,2/01/2001
 231,2,161,mitsubishi,gas,std,two,hatchback,fwd,front,93.7,1944,ohc,four,2bbl,9.4,68,5500,31,38,4/01/2001
 232,2,161,mitsubishi,gas,std,two,hatchback,fwd,front,93.7,2004,ohc,four,2bbl,9.4,68,5500,31,38,4/01/2001
