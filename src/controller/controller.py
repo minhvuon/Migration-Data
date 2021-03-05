@@ -81,16 +81,25 @@ def validateData(file_csv):
 
     val_data = Validation()
 
-    native_table = val_data.anonimize(dataFrame)
-    native_table, bad_table_v1 = val_data.check_nan(native_table)
+    pattern = "/\d+/"
+    replace = '/01/'
+    col_name_ano = 'Load-date'
+    native_table = val_data.anonimize(dataFrame, col_name_ano, pattern, replace)
 
+    col_name_cn = 'Price'
+    native_table, bad_table_v1 = val_data.check_nan(native_table, col_name_cn)
+
+    col_name_cl = 'Drive-wheels'
     length = 5
-    native_table, bad_table_v2 = val_data.check_length(native_table, length)
+    native_table, bad_table_v2 = val_data.check_length(native_table, col_name_cl, length)
+    
     native_table, bad_table_v3 = val_data.check_duplicate(native_table)
 
     list_check = ['Height', 'Width', 'Length', 'Engine-size', 'Bore', 'Stroke', 'Price']
     native_table = val_data.check_dtype(native_table, list_check)
-    native_table = val_data.rename(native_table)
+
+    dict_name = {"Fuel-type": "type", "Num-of-cylinders": "Num_cylinders"}
+    native_table = val_data.rename(native_table, dict_name)
     
     return native_table, pd.concat([bad_table_v1, bad_table_v2, bad_table_v3])
 

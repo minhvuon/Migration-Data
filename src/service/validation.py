@@ -11,14 +11,14 @@ class Validation:
         right_dframe = right_dframe.drop_duplicates(keep=False)
         return right_dframe
 
-    def check_nan(self, data_frame):
-        right_dframe = data_frame[(data_frame['Price'].str.isnumeric() == True)]
+    def check_nan(self, data_frame, col_name):
+        right_dframe = data_frame[(data_frame[col_name].str.isnumeric() == True)]
         left_dframe = self.merge_and_duplicate(data_frame, right_dframe)
         return right_dframe, left_dframe
 
-    def check_length(self, data_frame, length):
-        right_dframe = data_frame[data_frame['Drive-wheels'].str.len() <= length]
-        left_dframe = data_frame[data_frame['Drive-wheels'].str.len() > length]
+    def check_length(self, data_frame, col_name, length):
+        right_dframe = data_frame[data_frame[col_name].str.len() <= length]
+        left_dframe = data_frame[data_frame[col_name].str.len() > length]
         return right_dframe, left_dframe
 
     def check_dtype(self, data_frame, list_check):
@@ -32,16 +32,14 @@ class Validation:
         right_dframe = data_frame.drop_duplicates(keep=False)
         return right_dframe, left_dframe
 
-    def rename(self, data_frame):
-        return data_frame.rename(columns={"Fuel-type": "type", "Num-of-cylinders": "Num_cylinders"})
+    def rename(self, data_frame, dict_name):
+        return data_frame.rename(columns=dict_name)
 
-    def anonimize(self, data_frame):
-        pattern = "/\d+/"
-        replace = '/01/'
+    def anonimize(self, data_frame, col_name, pattern, replxace):
         temp_frame = []
-        for string in data_frame['Load-date']:
+        for string in data_frame[col_name]:
             stringv1 = re.sub(pattern, replace, string, 1)
             temp_frame.append(stringv1)
-        temp_frame = pd.DataFrame(temp_frame, columns=['Load-date'])
-        data_frame['Load-date'] = temp_frame
+        temp_frame = pd.DataFrame(temp_frame, columns=[col_name])
+        data_frame[col_name] = temp_frame
         return data_frame
