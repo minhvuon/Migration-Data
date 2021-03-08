@@ -35,7 +35,7 @@ class Validation:
     def rename(self, data_frame, dict_name):
         return data_frame.rename(columns=dict_name)
 
-    def anonimize(self, data_frame, col_name, pattern, replxace):
+    def anonimize(self, data_frame, col_name, pattern, replace):
         temp_frame = []
         for string in data_frame[col_name]:
             stringv1 = re.sub(pattern, replace, string, 1)

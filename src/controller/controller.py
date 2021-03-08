@@ -95,8 +95,8 @@ def validateData(file_csv):
     
     native_table, bad_table_v3 = val_data.check_duplicate(native_table)
 
-    list_check = ['Height', 'Width', 'Length', 'Engine-size', 'Bore', 'Stroke', 'Price']
-    native_table = val_data.check_dtype(native_table, list_check)
+    # list_check = ['Height', 'Width', 'Length', 'Engine-size', 'Bore', 'Stroke', 'Price']
+    # native_table = val_data.check_dtype(native_table, list_check)
 
     dict_name = {"Fuel-type": "type", "Num-of-cylinders": "Num_cylinders"}
     native_table = val_data.rename(native_table, dict_name)
