@@ -4,6 +4,7 @@ from config import config as cf
 from service.model import ConnPostgre
 from service.validation import Validation
 import pandas as pd
+import numpy as np
 import json
 from flask import request
 from datetime import date, datetime
@@ -51,6 +52,22 @@ def insert():
             file = request.files.get('file')
             native_table, bad_table = validateData(file)
 
+            change_dtype(native_table, 'symboling', int)
+            change_dtype(native_table, 'normalized_losses', int)
+            change_dtype(native_table, 'wheel_base', float)
+            change_dtype(native_table, 'length', float)
+            change_dtype(native_table, 'width', float)
+            change_dtype(native_table, 'height', float)
+            change_dtype(native_table, 'curb_weight', int)
+            change_dtype(native_table, 'engine_size', int)
+            change_dtype(native_table, 'bore', float)
+            change_dtype(native_table, 'stroke', float)
+            change_dtype(native_table, 'horsepower', int)
+            change_dtype(native_table, 'peak_rpm', int)
+            change_dtype(native_table, 'city_mpg', int)
+            change_dtype(native_table, 'highway_mpg', int)
+            change_dtype(native_table, 'price', int)
+
             name_file = get_time()
             name_folder = get_date()
 
@@ -86,6 +103,13 @@ def validateData(file_csv):
     col_name_ano = 'Load-date'
     native_table = val_data.anonimize(dataFrame, col_name_ano, pattern, replace)
 
+    list_check = ['Width', 'Bore', 'Height', 'Normalized-losses', 'Stroke', 'Length', 'Horsepower', 'peak-rpm', 'Engine-size']
+    dframe = val_data.validate_all(native_table, list_check)
+    native_table = dframe[dframe['check']==1]
+    bad_table_v0 = dframe[dframe['check']==0]
+    native_table.pop("check")
+    bad_table_v0.pop("check")
+
     col_name_cn = 'Price'
     native_table, bad_table_v1 = val_data.check_nan(native_table, col_name_cn)
 
@@ -98,10 +122,37 @@ def validateData(file_csv):
     # list_check = ['Height', 'Width', 'Length', 'Engine-size', 'Bore', 'Stroke', 'Price']
     # native_table = val_data.check_dtype(native_table, list_check)
 
-    dict_name = {"Fuel-type": "type", "Num-of-cylinders": "Num_cylinders"}
+    dict_name = {"No": "no",
+    "Symboling": "symboling",
+    "Normalized-losses": "normalized_losses",
+    "Make": "make",
+    "Fuel-type": "fuel_type",
+    "Aspiration": "aspiration",
+    "Num-of-doors": "num_of_doors",
+    "Body-style": "body_style",
+    "Drive-wheels": "drive_wheel",
+    "Engine-location": "engine_location",
+    "Wheel-base": "wheel_base",
+    "Length": "length",
+    "Width": "width",
+    "Height": "height",
+    "Curb-weight": "curb_weight",
+    "Engine-type": "engine_type",
+    "Num-of-cylinders": "num_of_cylinders",
+    "Engine-size": "engine_size",
+    "Fuel-system": "fuel_system",
+    "Bore": "bore",
+    "Stroke": "stroke",
+    "Compression-ratio": "compression_ratio",
+    "Horsepower": "horsepower",
+    "peak-rpm": "peak_rpm",
+    "city-mpg": "city_mpg",
+    "highway-mpg": "highway_mpg",
+    "Price": "price",
+    "Load-date": "load_date"}
     native_table = val_data.rename(native_table, dict_name)
     
-    return native_table, pd.concat([bad_table_v1, bad_table_v2, bad_table_v3])
+    return native_table, pd.concat([bad_table_v0, bad_table_v1, bad_table_v2, bad_table_v3])
 
 def get_date():
     today = date.today()
@@ -120,3 +171,7 @@ def check_folder(name_folder):
 
 def create_folder(name_folder):
     os.mkdir(name_folder)
+
+def change_dtype(data_frame, col_name, dtype):
+    data_frame[col_name] = data_frame.loc[:,col_name].astype(dtype)
+    return data_frame

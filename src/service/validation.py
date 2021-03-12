@@ -43,3 +43,18 @@ class Validation:
         temp_frame = pd.DataFrame(temp_frame, columns=[col_name])
         data_frame[col_name] = temp_frame
         return data_frame
+
+    def validate_all(self, data_frame, list_validate):
+        data_frame['check'] = 0
+        for i in range(0, len(list_validate)):
+            data_frame[list_validate[i]] = data_frame[list_validate[i]].astype(str)
+        
+        pattern = r'^-?\d+(?:\.\d+)$'
+        for i in range(0, len(data_frame[list_validate[0]])):
+            ok = 0
+            for j in range(0, len(list_validate)):
+                if (re.match(pattern, data_frame[list_validate[j]][i]) or data_frame[list_validate[j]][i].isnumeric()):
+                    ok += 1
+            if ok == len(list_validate):
+                data_frame.at[i, 'check'] = 1
+        return data_frame
