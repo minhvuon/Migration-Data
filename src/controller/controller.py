@@ -95,7 +95,8 @@ def insert():
 def validateData(file_csv):
     data = pd.read_csv(file_csv, sep=',')
     dataFrame = pd.DataFrame(data)
-
+    dataFrame = dataFrame[0:10]
+    # dataFrame = dataFrame.sample(n = 10)
     val_data = Validation()
 
     pattern = "/\d+/"
@@ -161,8 +162,8 @@ def get_date():
 
 def get_time():
     now = datetime.now()
-    current_time = now.strftime("%H")
-    # current_time = now.strftime("%H:%M:%S")
+    # current_time = now.strftime("%H-%M")
+    current_time = now.strftime("%H") +"h "+ now.strftime("%M")+"m "+ now.strftime("%S")+"s"
     return current_time
 
 def check_folder(name_folder):
